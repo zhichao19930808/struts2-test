@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" 
+        "classpath:struts-2.3.dtd">
+<struts>
+	<package name="order" extends="struts-default">
+		<action name="saveName" class="com.demo.action.Test" method="saveName" >
+			<result name="success" >index.jsp</result>
+		</action>
+		<action name="saveAddress" class="com.demo.action.Test" method="saveAddress" >
+			<result name="success" >index.jsp</result>
+		</action>
+		<action name="saveUser" class="com.demo.action.Test" method="saveUser" >
+			<result name="success" >index.jsp</result>
+		</action>
+	</package>
+</struts>
+

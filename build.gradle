@@ -1,0 +1,27 @@
+group 'struts2-test'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12' // 测试
+    compile 'mysql:mysql-connector-java:5.1.42' // 数据库链接
+    compile 'javax:javaee-api:7.0' // servlet
+    compile 'jstl:jstl:1.2'  // JSTL 的库
+    compile 'c3p0:c3p0:0.9.1.2' // 数据库连接池
+    compile 'net.sf.ehcache:ehcache-core:2.4.3' // 缓存
+
+
+    compile 'org.apache.struts:struts2-config-browser-plugin:2.3.24'
+    compile 'org.apache.struts:struts2-convention-plugin:2.3.24'
+    compile 'org.apache.struts:struts2-json-plugin:2.3.24' // struts - json 支持插件
+//    compile 'org.apache.struts:struts2-spring-plugin:2.3.24'
+    compile 'org.apache.struts:struts2-core:2.3.24'
+}
