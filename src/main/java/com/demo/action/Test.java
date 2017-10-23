@@ -1,6 +1,6 @@
 package com.demo.action;
 
-import entity.User;
+import com.demo.entity.User;
 
 public class Test extends BaseAction{
     //获取网页传来的参数
