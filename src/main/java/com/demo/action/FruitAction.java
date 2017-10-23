@@ -1,30 +1,58 @@
 package com.demo.action;
 
-import com.demo.dao.impl.FruitDaoImpl;
 import com.demo.entity.Fruit;
+import com.demo.service.impl.FruitServiceImpl;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public class FruitAction extends BaseAction{
+    private int Id;
     private List<Fruit> fruits;
     private Fruit fruit;
-    private FruitDaoImpl fruitDao = new FruitDaoImpl();
+    private FruitServiceImpl fruitService = new FruitServiceImpl();
+
+
+
+
+
+    public String update() {
+        fruitService.update(fruit);
+        return null;
+    }
+
+    public String deleteById() {
+        fruitService.deleteById(Id);
+        return null;
+    }
+
+    public String add() {
+        fruitService.add(fruit);
+        return null;
+    }
+
     public String findById(){
-        try {
-            fruit = fruitDao.findById(1);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        fruit = fruitService.findById(1);
         return this.SUCCESS;
     }
+
     public String findAll(){
-        try {
-            fruits = fruitDao.findAll();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        fruits = fruitService.findAll();
         return this.SUCCESS;
+    }
+
+
+
+
+
+
+
+
+
+    public int getId() {
+        return Id;
+    }
+    public void setId(int id) {
+        Id = id;
     }
 
     public List<Fruit> getFruits() {

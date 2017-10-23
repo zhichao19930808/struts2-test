@@ -8,7 +8,7 @@ import java.util.List;
 public interface FruitDao {
     void add(Fruit fruit) throws SQLException;
 
-    void delete(int id) throws SQLException;
+    void deleteById(int id) throws SQLException;
 
     void update(Fruit fruit) throws SQLException;
 

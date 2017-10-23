@@ -29,7 +29,7 @@ public class FruitDaoImpl implements FruitDao {
     }
 
     @Override
-    public void delete(int id) throws SQLException {
+    public void deleteById(int id) throws SQLException {
         Connection connection = Db.getConnection();
         String sql = "DELETE FROM db_test.db_fruit WHERE id=?";
         PreparedStatement pre = null;

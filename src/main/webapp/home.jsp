@@ -26,6 +26,8 @@
             <td><s:property value="#f.name"/> </td>
             <td><s:property value="#f.kind"/> </td>
             <td><s:property value="#f.time"/> </td>
+            <td><a href="">编辑</a> </td>
+            <td><a href="#">删除</a> </td>
         </tr>
     </s:iterator>
 </table>
