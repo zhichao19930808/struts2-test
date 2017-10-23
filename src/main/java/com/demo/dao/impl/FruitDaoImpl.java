@@ -8,6 +8,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FruitDaoImpl implements FruitDao {
     @Override
@@ -80,4 +82,30 @@ public class FruitDaoImpl implements FruitDao {
         Db.close(resultSet,statement,connection);
         return fruit;
     }
+
+    @Override
+    public List<Fruit> findAll() throws SQLException {
+        List<Fruit> fruits = new ArrayList<>();
+        Connection connection = Db.getConnection();
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        String sql = "SELECT * FROM db_test.db_fruit";
+        if (connection != null) {
+            statement = connection.prepareStatement(sql);
+            resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                Fruit fruit = new Fruit(
+                        resultSet.getInt("id"),
+                        resultSet.getString("name"),
+                        resultSet.getString("kind"),
+                        resultSet.getDate("time")
+                );
+                fruits.add(fruit);
+            }
+        }
+        Db.close(resultSet,statement,connection);
+        return fruits;
+    }
+
+
 }

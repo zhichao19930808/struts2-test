@@ -12,6 +12,24 @@
     <title>home</title>
 </head>
 <body>
+
+<table>
+    <tr>
+        <td>id</td>
+        <td>name</td>
+        <td>kind</td>
+        <td>time</td>
+    </tr>
+    <s:iterator id="f" value="fruits">
+        <tr>
+            <td><s:property value="#f.id"/> </td>
+            <td><s:property value="#f.name"/> </td>
+            <td><s:property value="#f.kind"/> </td>
+            <td><s:property value="#f.time"/> </td>
+        </tr>
+    </s:iterator>
+</table>
+
 <s:debug></s:debug>
 </body>
 </html>

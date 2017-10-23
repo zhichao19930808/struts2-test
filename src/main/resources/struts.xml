@@ -15,7 +15,10 @@
 		</action>
 	</package>
 	<package name="fruit" extends="struts-default">
-        <action name="login" class="com.demo.action.FruitAction" method="findById">
+        <action name="findById" class="com.demo.action.FruitAction" method="findById">
+            <result name="success"> home.jsp</result>
+        </action>
+        <action name="findAll" class="com.demo.action.FruitAction" method="findAll">
             <result name="success"> home.jsp</result>
         </action>
     </package>

@@ -5,6 +5,7 @@ import com.demo.entity.Fruit;
 
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.List;
 
 public class Test {
     public static void main(String[] args) {
@@ -20,8 +21,11 @@ public class Test {
            //修改
 //            fruitDao.update(fruit2);
             //查询
-            Fruit fruit3 =fruitDao.findById(1);
-            System.out.println(fruit3.getName());
+//            Fruit fruit3 =fruitDao.findById(1);
+//            System.out.println(fruit3.getName());
+            //查询所有
+            List<Fruit> fruitList = fruitDao.findAll();
+            System.out.println(fruitList.get(0).getName());
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -23,4 +23,15 @@
         <filter-name>Struts2</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <!--编码过滤器-->
+    <filter>
+        <filter-name>encoding</filter-name>
+        <filter-class>com.demo.utils.EncodingFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>encoding</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>
