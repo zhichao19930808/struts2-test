@@ -16,21 +16,21 @@ public class FruitAction extends BaseAction{
 
     public String update() {
         fruitService.update(fruit);
-        return null;
+        return this.SUCCESS;
     }
 
     public String deleteById() {
         fruitService.deleteById(Id);
-        return null;
+        return this.SUCCESS;
     }
 
     public String add() {
         fruitService.add(fruit);
-        return null;
+        return this.SUCCESS;
     }
 
     public String findById(){
-        fruit = fruitService.findById(1);
+        fruit = fruitService.findById(Id);
         return this.SUCCESS;
     }
 

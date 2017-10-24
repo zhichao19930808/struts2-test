@@ -12,12 +12,13 @@
     <title>update</title>
 </head>
 <body>
-<s:form action="findAll.action" method="POST">
-    <input type="hidden" name="id" value="">
-    <s:textfield label="水果名称" name="name"/>
-    <s:textfield label="水果种类" name="kind"/>
-    <s:textfield label="生产日期" name="time"/>
+<s:form action="update" method="POST">
+    <input type="hidden" name="fruit.id" value="<s:property value="fruit.id"/> ">
+    <s:textfield label="水果名称" name="fruit.name" value="%{fruit.name}"/>
+    <s:textfield label="水果种类" name="fruit.kind" value="%{fruit.kind}"/>
+    <s:textfield label="生产日期" name="fruit.time" value="%{fruit.time}"/>
     <s:submit value="提交"/>
 </s:form>
+<s:debug/>
 </body>
 </html>

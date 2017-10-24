@@ -12,10 +12,10 @@
     <title>add</title>
 </head>
 <body>
-<s:form action="findAll.action" method="POST">
-    <s:textfield label="水果名称" name="name"/>
-    <s:textfield label="水果种类" name="kind"/>
-    <s:textfield label="生产日期" name="time"/>
+<s:form action="add" method="POST">
+    <s:textfield label="水果名称" name="fruit.name"/>
+    <s:textfield label="水果种类" name="fruit.kind"/>
+    <s:textfield label="生产日期" name="fruit.time"/>
     <s:submit value="提交"/>
 </s:form>
 </body>

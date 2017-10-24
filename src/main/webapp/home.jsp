@@ -26,13 +26,13 @@
             <td><s:property value="#f.name"/> </td>
             <td><s:property value="#f.kind"/> </td>
             <td><s:property value="#f.time"/> </td>
-            <td><a href="">编辑</a> </td>
+            <td><s:a href="findById.action?id=%{#f.id}">编辑</s:a> </td>
             <!--<td><a href="deleteById.action?id=<s:property value ="#f.id"/>">删除</a> </td>-->
             <td><s:a href="deleteById.action?id=%{#f.id}">删除</s:a></td>
         </tr>
     </s:iterator>
     <tr>
-        <td><a href="">添加</a></td>
+        <td><s:a href="add.jsp">添加</s:a></td>
     </tr>
 </table>
 
