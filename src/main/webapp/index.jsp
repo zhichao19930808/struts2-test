@@ -22,9 +22,9 @@
   <s:form action="findAll" method="POST">
       <%--文本标签--%>
       <s:textfield name="name" label="姓名"/>
-      密码表情
+      <%--密码标签--%>
       <s:password name="password" label="密码"/>
-      提交标签
+      <%--提交标签--%>
       <s:submit value="提交"/>
   </s:form>
   </body>
