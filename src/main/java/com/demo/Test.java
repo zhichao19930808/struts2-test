@@ -15,7 +15,7 @@ public class Test {
         Fruit fruit2 = new Fruit(1,"国光苹果","苹果",new Date(System.currentTimeMillis()));
         try {
             //增加
-//            fruitDao.add(fruit);
+            fruitDao.add(fruit);
             //删除
 //            fruitDao.delete(2);
            //修改
@@ -24,8 +24,8 @@ public class Test {
 //            Fruit fruit3 =fruitDao.findById(1);
 //            System.out.println(fruit3.getName());
             //查询所有
-            List<Fruit> fruitList = fruitDao.findAll();
-            System.out.println(fruitList.get(0).getName());
+//            List<Fruit> fruitList = fruitDao.findAll();
+//            System.out.println(fruitList.get(0).getName());
         } catch (SQLException e) {
             e.printStackTrace();
         }

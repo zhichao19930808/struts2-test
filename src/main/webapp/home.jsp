@@ -20,18 +20,22 @@
         <td>kind</td>
         <td>time</td>
     </tr>
-    <s:iterator id="f" value="fruits">
+    <s:iterator value="fruits" var="f">
         <tr>
             <td><s:property value="#f.id"/> </td>
             <td><s:property value="#f.name"/> </td>
             <td><s:property value="#f.kind"/> </td>
             <td><s:property value="#f.time"/> </td>
             <td><a href="">编辑</a> </td>
-            <td><a href="#">删除</a> </td>
+            <!--<td><a href="deleteById.action?id=<s:property value ="#f.id"/>">删除</a> </td>-->
+            <td><s:a href="deleteById.action?id=%{#f.id}">删除</s:a></td>
         </tr>
     </s:iterator>
+    <tr>
+        <td><a href="">添加</a></td>
+    </tr>
 </table>
 
-<s:debug></s:debug>
+<s:debug/>
 </body>
 </html>

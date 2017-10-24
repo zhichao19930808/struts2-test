@@ -1,11 +1,12 @@
 package com.demo.utils;
 
-import com.mysql.jdbc.Driver;
+import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
 
 public class Db {
-    private static String URL = "jdbc:mysql:///?user=root&password=Glory.0808";
+//    UTC是统一标准世界时间。
+    private static String URL = "jdbc:mysql:///?serverTimezone=UTC&user=root&password=Glory.0808";
 
     public static Connection getConnection() {
         try {
