@@ -18,5 +18,9 @@
     <s:textfield label="生产日期" name="fruit.time"/>
     <s:submit value="提交"/>
 </s:form>
+服务器端报的错误：
+actionerror: <s:actionerror/>
+actionmessage: <s:actionmessage/>
+fielderror: <s:fielderror/>
 </body>
 </html>

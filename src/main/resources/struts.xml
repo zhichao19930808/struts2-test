@@ -48,6 +48,7 @@
         </action>
         <action name="add" class="com.demo.action.FruitAction" method="add">
             <result name="success" type="redirectAction">findAll</result>
+            <result name="input">/add.jsp</result>
         </action>
         <action name="findByCondition" class="com.demo.action.FruitAction" method="findByCondition">
             <result name="success">home.jsp</result>

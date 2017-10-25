@@ -28,6 +28,18 @@ public class FruitAction extends BaseAction{
         fruitService.add(fruit);
         return this.SUCCESS;
     }
+    public void validateAdd() {
+        if (fruit.getName() == null||fruit.getName().equals("")) {
+            this.addActionError("水果名称不合法");
+            this.addActionMessage("水果的名称不合法");
+            this.addFieldError(fruit.getName(),"水果的名称是不合法的");
+        }
+        if (fruit.getKind() == null||fruit.getKind().equals("")) {
+            this.addActionError("水果种类不合法");
+            this.addActionMessage("水果的种类不合法");
+            this.addFieldError(fruit.getKind(),"水果的种类是不合法的");
+        }
+    }
 
     public String findById(){
         fruit = fruitService.findById(Id);
@@ -43,6 +55,7 @@ public class FruitAction extends BaseAction{
         fruits = fruitService.findByCondition(fruit);
         return this.SUCCESS;
     }
+
 
 
 
