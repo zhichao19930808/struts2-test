@@ -2,6 +2,7 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
+    
     <constant name="struts.locale" value="zh_CN"/>
     <!--<constant name="struts.i18n.encoding" value="UTF-8"/>-->
     <constant name="struts.custom.i18n.resources" value="UTF-8"/>
@@ -34,6 +35,19 @@
 	</package>
     <!--*****************************************************************************************-->
 	<package name="fruit" extends="struts-default">
+        <interceptors>
+            <!--声明-->
+            <interceptor name="encoding" class="com.demo.utils.EncodingInterceptors"/>
+            <!--将自定义的拦截器写入到拦截器栈-->
+            <interceptor-stack name="myStack">
+                <!--引用系统默认的拦截器-->
+                <interceptor-ref name="defaultStack"/>
+                <!--引用自定义的拦截器-->
+                <interceptor-ref name="encoding"/>
+            </interceptor-stack>
+        </interceptors>
+        <!--&lt;!&ndash;任何请求都经过该拦截器&ndash;&gt;-->
+        <!--<default-interceptor-ref name="myStack"/>-->
         <action name="findById" class="com.demo.action.FruitAction" method="findById">
             <result name="success">/update.jsp</result>
         </action>
@@ -47,8 +61,10 @@
             <result name="success" type="redirectAction">findAll</result>
         </action>
         <action name="add" class="com.demo.action.FruitAction" method="add">
+            <!--只有访问add方法时经过此拦截器-->
             <result name="success" type="redirectAction">findAll</result>
             <result name="input">/add.jsp</result>
+            <interceptor-ref name="myStack"/>
         </action>
         <action name="findByCondition" class="com.demo.action.FruitAction" method="findByCondition">
             <result name="success">home.jsp</result>
