@@ -13,5 +13,8 @@ public interface FruitService {
     void update(Fruit fruit);
 
     Fruit findById(int id);
+
     List<Fruit> findAll();
+
+    List<Fruit> findByCondition(Fruit fruit);
 }

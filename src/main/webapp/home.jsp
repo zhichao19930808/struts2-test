@@ -12,7 +12,13 @@
     <title>home</title>
 </head>
 <body>
-
+<h3>条件查询：</h3>
+<s:form action="findByCondition" method="POST" theme="simple">
+水果名称:<s:textfield  name="fruit.name"/>
+水果种类:<s:textfield  name="fruit.kind"/>
+生产日期:<s:textfield name="fruit.time"/>
+<s:submit value="查询"/>
+</s:form>
 <table>
     <tr>
         <td>id</td>

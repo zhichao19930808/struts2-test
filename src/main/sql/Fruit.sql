@@ -15,4 +15,4 @@ DELETE FROM db_test.db_fruit
 WHERE id = ?;
 
 UPDATE db_test.db_fruit SET name=?,kind=?,time=? WHERE id=1;
-SELECT * FROM db_test.db_fruit WHERE id=?;
+SELECT * FROM db_test.db_fruit WHERE id=? AND 1 LIKE '%%';

@@ -85,11 +85,16 @@ public class FruitDaoImpl implements FruitDao {
 
     @Override
     public List<Fruit> findAll() throws SQLException {
+        String sql = "SELECT * FROM db_test.db_fruit";
+        return find(sql);
+    }
+
+
+    public List<Fruit> find(String sql) throws SQLException{
         List<Fruit> fruits = new ArrayList<>();
         Connection connection = Db.getConnection();
         PreparedStatement statement = null;
         ResultSet resultSet = null;
-        String sql = "SELECT * FROM db_test.db_fruit";
         if (connection != null) {
             statement = connection.prepareStatement(sql);
             resultSet = statement.executeQuery();

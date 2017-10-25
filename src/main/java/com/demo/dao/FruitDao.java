@@ -13,6 +13,9 @@ public interface FruitDao {
     void update(Fruit fruit) throws SQLException;
 
     Fruit findById(int id) throws SQLException;
+
     List<Fruit> findAll() throws SQLException;
+
+    List<Fruit> find(String sql)throws SQLException;
 
 }

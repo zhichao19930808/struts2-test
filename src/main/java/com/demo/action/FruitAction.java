@@ -39,6 +39,13 @@ public class FruitAction extends BaseAction{
         return this.SUCCESS;
     }
 
+    public String findByCondition() {
+        fruits = fruitService.findByCondition(fruit);
+        return this.SUCCESS;
+    }
+
+
+
 
     public String getName() {
         return name;

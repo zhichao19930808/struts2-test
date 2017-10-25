@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
     <constant name="struts.locale" value="zh_CN"/>
     <!--<constant name="struts.i18n.encoding" value="UTF-8"/>-->
@@ -34,10 +35,10 @@
     <!--*****************************************************************************************-->
 	<package name="fruit" extends="struts-default">
         <action name="findById" class="com.demo.action.FruitAction" method="findById">
-            <result name="success"> update.jsp</result>
+            <result name="success">/update.jsp</result>
         </action>
         <action name="findAll" class="com.demo.action.FruitAction" method="findAll">
-            <result name="success"> home.jsp</result>
+            <result name="success">/home.jsp</result>
         </action>
         <action name="update" class="com.demo.action.FruitAction" method="update">
             <result name="success" type="redirectAction">findAll</result>
@@ -47,6 +48,9 @@
         </action>
         <action name="add" class="com.demo.action.FruitAction" method="add">
             <result name="success" type="redirectAction">findAll</result>
+        </action>
+        <action name="findByCondition" class="com.demo.action.FruitAction" method="findByCondition">
+            <result name="success">home.jsp</result>
         </action>
     </package>
 </struts>
