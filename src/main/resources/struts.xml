@@ -2,25 +2,6 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
-    
-    <constant name="struts.locale" value="zh_CN"/>
-    <!--<constant name="struts.i18n.encoding" value="UTF-8"/>-->
-    <constant name="struts.custom.i18n.resources" value="UTF-8"/>
-    <!--Struts2后缀，多个后缀之间以英文逗号（,）隔开-->
-    <constant name="struts.action.extension" value="action,do,html" />
-    <constant name="struts.action.excludePattern" value="/druid/.*,/dwr/.*,/dwr/test/.*,/assets/.*"/>
-    <!-- 当struts的配置文件修改后,系统是否自动重新加载该文件,默认值为false(生产环境下使用),开发阶段最好打开-->
-    <constant name="struts.configuration.xml.reload" value="true" />
-    <!-- 设置浏览器是否缓存静态内容,默认值为true(生产环境下使用),开发阶段最好关闭 -->
-    <constant name="struts.serve.static.browserCache" value="false" />
-    <!-- 开发模式下使用,这样可以打印出更详细的错误信息 -->
-    <constant name="struts.devMode" value="true" />
-    <!-- 动态方法调用，默认false -->
-    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
-    <!-- 文件上传大小限制，默认值为2M（2097152） -->
-    <constant name="struts.multipart.maxSize" value="2097152000"/>
-    <!-- 上传文件时的临时存储路径 -->
-    <constant name="struts.multipart.saveDir" value="/temp"/>
 
 	<package name="order" extends="struts-default">
 		<action name="saveName" class="com.demo.action.Test" method="saveName" >
@@ -69,6 +50,34 @@
         <action name="findByCondition" class="com.demo.action.FruitAction" method="findByCondition">
             <result name="success">home.jsp</result>
         </action>
+        <action name="upFile" class="com.demo.action.FileAction" method="upFile">
+            <result name="success">index.jsp</result>
+            <result name="input">index.jsp</result>
+            <!--引用文件上传拦截器-->
+            <interceptor-ref name="fileUpload"/>
+            <!--引用系统默认的拦截器-->
+            <interceptor-ref name="defaultStack"/>
+        </action>
     </package>
+
+    <constant name="struts.locale" value="zh_CN"/>
+    <!--<constant name="struts.i18n.encoding" value="UTF-8"/>-->
+    <constant name="struts.custom.i18n.resources" value="UTF-8"/>
+    <!--Struts2后缀，多个后缀之间以英文逗号（,）隔开-->
+    <constant name="struts.action.extension" value="action,do,html" />
+    <constant name="struts.action.excludePattern" value="/druid/.*,/dwr/.*,/dwr/test/.*,/assets/.*"/>
+    <!-- 当struts的配置文件修改后,系统是否自动重新加载该文件,默认值为false(生产环境下使用),开发阶段最好打开-->
+    <constant name="struts.configuration.xml.reload" value="true" />
+    <!-- 设置浏览器是否缓存静态内容,默认值为true(生产环境下使用),开发阶段最好关闭 -->
+    <constant name="struts.serve.static.browserCache" value="false" />
+    <!-- 开发模式下使用,这样可以打印出更详细的错误信息 -->
+    <constant name="struts.devMode" value="true" />
+    <!-- 动态方法调用，默认false -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+    <!-- 文件上传大小限制，默认值为2M（2097152） -->
+    <constant name="struts.multipart.maxSize" value="2097152000"/>
+    <!-- 上传文件时的临时存储路径 -->
+    <constant name="struts.multipart.saveDir" value="/temp"/>
+
 </struts>
 

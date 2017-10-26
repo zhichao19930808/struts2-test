@@ -19,6 +19,7 @@
       <input type="submit">
   </form>
 -------------------------------------------------------------------------------------------------------------------------
+  <h4>ognl标签</h4>
   <s:form action="findAll" method="POST">
       <%--文本标签--%>
       <s:textfield name="name" label="姓名"/>
@@ -27,5 +28,11 @@
       <%--提交标签--%>
       <s:submit value="提交"/>
   </s:form>
+  -----------------------------------------------------------------------------------------------------------------------
+  <h4>文件上传</h4>
+  <form action="<%=request.getContextPath()%>/upFile.action" method="post" enctype="multipart/form-data">
+      <input type="file" name="uploadfile">
+      <input type="submit" value="上传">
+  </form>
   </body>
 </html>
