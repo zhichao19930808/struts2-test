@@ -54,7 +54,9 @@
             <result name="success">index.jsp</result>
             <result name="input">index.jsp</result>
             <!--引用文件上传拦截器-->
-            <interceptor-ref name="fileUpload"/>
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">image/jpeg</param>
+            </interceptor-ref>
             <!--引用系统默认的拦截器-->
             <interceptor-ref name="defaultStack"/>
         </action>
